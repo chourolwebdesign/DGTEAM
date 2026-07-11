@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <section className="page-hero"><div className="container"><span className="service-no">Fehler</span><h1>Etwas ist nicht wie geplant gelaufen.</h1><p className="lead">Bitte laden Sie die Seite neu oder versuchen Sie es in einem Moment erneut.</p><button className="button button-primary" onClick={reset}>Erneut versuchen</button></div></section>}

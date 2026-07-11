@@ -1,0 +1,2 @@
+import { Button } from "@/components/ui/Button";
+export default function NotFound(){return <section className="page-hero" style={{minHeight:'75svh',display:'grid',alignItems:'center'}}><div className="container"><span className="service-no">404</span><h1>Diese Fläche ist leer.</h1><p className="lead">Die angeforderte Seite wurde nicht gefunden. Über die Startseite gelangen Sie zurück zu allen Leistungen.</p><Button href="/">Zur Startseite</Button></div></section>}

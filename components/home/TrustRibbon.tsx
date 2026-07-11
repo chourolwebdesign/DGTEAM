@@ -1,0 +1,2 @@
+const items=["Deutschlandweit im Einsatz","Firmensitz in Krauchenwies","Privat- und Gewerbekunden","Direkte persönliche Kommunikation","Flexible Einsatzplanung"];
+export function TrustRibbon(){return <div className="trust-ribbon" aria-label="DG Team Merkmale"><div className="trust-track">{[...items,...items].map((item,index)=><span className="trust-item" key={`${item}-${index}`}>{item}</span>)}</div></div>}
