@@ -1,0 +1,1 @@
+export default function Loading(){return <div style={{minHeight:'70svh',display:'grid',placeItems:'center'}} role="status" aria-live="polite"><span className="eyebrow">Seite wird geladen …</span></div>}
