@@ -10,7 +10,7 @@
 
 ## Bilder und Projekte
 
-- [ ] `public/images/hero-industrial-demo.png` durch freigegebenes Originalmaterial ersetzen oder die Nutzung als KI-generierte Visualisierung offen beibehalten.
+- [ ] Die drei KI-generierten Hero-Szenen (`hero-before.png`, `hero-industrial-demo.png`, `hero-after.png`) durch zusammengehöriges, freigegebenes Originalmaterial ersetzen oder die Nutzung als Visualisierung offen beibehalten.
 - [ ] Echte Projektbilder nur mit gesicherten Nutzungsrechten einpflegen.
 - [ ] Vorher-/Nachher-Demo durch zusammengehörige echte Projektaufnahmen ersetzen.
 - [ ] Pro Projekt Titel, Region, Leistung, Umfang und Bildfreigabe dokumentieren.

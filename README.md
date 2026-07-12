@@ -1,6 +1,6 @@
 # DG Team Website
 
-Production-ready Next.js-Website im Designsystem **Precision in Motion**. Die Anwendung enthält Startseite, fünf Leistungsseiten, Einsatzgebiete, Karriere, Kontakt, fünfstufigen Angebotskonfigurator, API-Routen, E-Mail-Versand, SEO, JSON-LD, Sitemap, robots.txt und `llms.txt`.
+Production-ready Next.js-Website im Designsystem **Precision in Motion**. Die Anwendung enthält eine dreistufige Cinematic-Hero-Sequenz, scroll-gekoppelte Motion-Erlebnisse, Startseite, fünf Leistungsseiten, Einsatzgebiete, Karriere, Kontakt, fünfstufigen Angebotskonfigurator, API-Routen, E-Mail-Versand, SEO, JSON-LD, Sitemap, robots.txt und `llms.txt`.
 
 ## Schnellstart
 
@@ -66,7 +66,13 @@ Kontaktangaben kommen zentral aus `content/site.ts` und sollten nicht in mehrere
 
 ## Bilder ersetzen
 
-Das Hero-Bild ist eine KI-generierte Design-Demonstration und kein reales Kundenprojekt. Ersetzen Sie `public/images/hero-industrial-demo.png` durch ein freigegebenes Bild im gleichen Seitenverhältnis oder aktualisieren Sie die Bildpfade. Danach `object-position` für Mobilgeräte in `app/globals.css` prüfen.
+Die drei Hero-Bilder sind KI-generierte Design-Demonstrationen und keine realen Kundenprojekte:
+
+- `public/images/hero-before.png`
+- `public/images/hero-industrial-demo.png`
+- `public/images/hero-after.png`
+
+Ersetzen Sie die Sequenz idealerweise durch drei zusammengehörige, freigegebene Originalaufnahmen im gleichen Seitenverhältnis. Danach `object-position` für Mobilgeräte in `app/globals.css` prüfen.
 
 ## Projekte, Bewertungen und Jobs
 
@@ -94,5 +100,6 @@ Impressum, Datenschutz und AGB sind klar als zu prüfende Platzhalter markiert. 
 - Alle API-Eingaben werden mit Zod validiert und pro IP begrenzt.
 - Honeypot ist im Kontaktformular aktiv.
 - Animationen respektieren `prefers-reduced-motion`.
+- Hero-Crossfades, Ken-Burns-Bewegung, Swipe-Steuerung, Scroll-Reveals, gestaffelte Karten und die scroll-gekoppelte Prozesslinie werden mit Framer Motion umgesetzt.
 - Die mobile Kontaktleiste berücksichtigt iPhone Safe Areas.
 - Es gibt keine erfundenen Bewertungen, Statistiken, Zertifikate oder Preise.
