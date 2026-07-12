@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowRight, Pause, Phone, Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { site } from "@/content/site";
 
 const stages = [
@@ -119,7 +120,7 @@ export function CinematicHero() {
             Von der Räumung bis zur besenreinen Übergabe: DG Team bereitet Immobilien strukturiert, zuverlässig und deutschlandweit für die nächste Nutzung vor.
           </motion.p>
           <motion.div className="hero-actions" variants={{ hidden: { opacity: 0, y: 25 }, show: { opacity: 1, y: 0, transition: { duration: 0.7 } } }}>
-            <Button href="/angebot">Jetzt Angebot anfragen <ArrowRight size={18} /></Button>
+            <Magnetic><Button href="/angebot">Jetzt Angebot anfragen <ArrowRight size={18} /></Button></Magnetic>
             <Button href="/leistungen" variant="secondary">Leistungen ansehen</Button>
             <a className="button hero-phone" href={site.phoneHref}><Phone size={16} /> Direkt anrufen</a>
           </motion.div>

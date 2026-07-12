@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 
 const steps = [
@@ -21,9 +21,18 @@ export function AnimatedProcess() {
     <div className="process-experience" ref={target}>
       <aside className="process-sticky" aria-hidden="true">
         <span>PROJEKT / 0{active + 1}</span>
-        <motion.strong key={active} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} style={{ y: numeralY }}>
-          {steps[active][0]}
-        </motion.strong>
+        <AnimatePresence mode="popLayout" initial={false}>
+          <motion.strong
+            key={active}
+            initial={{ opacity: 0, y: 44, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -38, filter: "blur(8px)" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ y: numeralY }}
+          >
+            {steps[active][0]}
+          </motion.strong>
+        </AnimatePresence>
         <div className="process-signal"><i /><i /><i /></div>
       </aside>
       <div className="process-list">

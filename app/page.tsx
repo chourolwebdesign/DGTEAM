@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { federalStates } from "@/content/site";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { TextReveal } from "@/components/motion/TextReveal";
+import { Parallax } from "@/components/motion/Parallax";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { AnimatedProcess } from "@/components/home/AnimatedProcess";
 import { MotionServices } from "@/components/home/MotionServices";
 
@@ -50,8 +53,10 @@ export default function Home() {
 
       <section className="section transformation-section">
         <div className="container">
-          <Reveal><span className="eyebrow">Transformation</span><h2 className="display">Der Unterschied ist sichtbar.</h2><p className="lead">Von belegter Fläche zu klarer, planbarer Nutzung. Ziehen Sie die Trennlinie mit Maus, Tastatur oder Touch.</p></Reveal>
-          <Reveal delay={0.12} amount={0.1}><div className="transformation-stage"><BeforeAfterSlider /><span className="vertical-caption">CHAOS → STRUCTURE → CLEAR SPACE</span></div></Reveal>
+          <Reveal><span className="eyebrow">Transformation</span></Reveal>
+          <TextReveal className="display" text="Der Unterschied ist sichtbar." />
+          <Reveal delay={0.1}><p className="lead">Von belegter Fläche zu klarer, planbarer Nutzung. Ziehen Sie die Trennlinie mit Maus, Tastatur oder Touch.</p></Reveal>
+          <Reveal delay={0.12} amount={0.1}><Parallax className="transformation-stage" range={34}><BeforeAfterSlider /><span className="vertical-caption">CHAOS → STRUCTURE → CLEAR SPACE</span></Parallax></Reveal>
         </div>
       </section>
 
@@ -64,14 +69,17 @@ export default function Home() {
 
       <section className="section services-section" id="leistungen">
         <div className="container">
-          <Reveal><span className="eyebrow">Leistungssystem</span><h2 className="display">Unsere Leistungen für klare und nutzbare Flächen.</h2><p className="lead">Ein klar abgegrenztes Leistungssystem – vom beweglichen Inventar bis zum vereinbarten Rückbau nicht tragender Bauteile.</p></Reveal>
+          <Reveal><span className="eyebrow">Leistungssystem</span></Reveal>
+          <TextReveal className="display" text="Unsere Leistungen für klare und nutzbare Flächen." />
+          <Reveal delay={0.1}><p className="lead">Ein klar abgegrenztes Leistungssystem – vom beweglichen Inventar bis zum vereinbarten Rückbau nicht tragender Bauteile.</p></Reveal>
           <MotionServices />
         </div>
       </section>
 
       <section className="section process-section" id="ablauf">
         <div className="container">
-          <Reveal><span className="eyebrow">Von Anfrage bis Übergabe</span><h2 className="display">In vier Schritten zur nutzbaren Immobilie.</h2></Reveal>
+          <Reveal><span className="eyebrow">Von Anfrage bis Übergabe</span></Reveal>
+          <TextReveal className="display" text="In vier Schritten zur nutzbaren Immobilie." />
           <AnimatedProcess />
         </div>
       </section>
@@ -107,7 +115,7 @@ export default function Home() {
       <section className="section career-home">
         <div className="container split-grid">
           <Reveal direction="left"><span className="eyebrow">Karriere</span><h2 className="display">Werde Teil von DG Team.</h2><p className="lead">Zuverlässige Mitarbeitende für Entrümpelung, Entkernung und Rückbau – in Vollzeit, Teilzeit, als Minijob oder Ferienjob.</p><Button href="/karriere">Karriere entdecken <Users size={18} /></Button></Reveal>
-          <Reveal className="career-panel" direction="right"><Building2 className="red" size={36} /><span className="service-no">PERSPEKTIVE / 01</span><h3>Mit Verantwortung wachsen.</h3><p className="lead">Wer zuverlässig arbeitet, kann perspektivisch mehr Verantwortung übernehmen – etwa in der Koordination eines Einsatzteams.</p><div className="career-orbit" aria-hidden="true"><i /><i /></div></Reveal>
+          <Parallax range={30}><Reveal className="career-panel" direction="right"><Building2 className="red" size={36} /><span className="service-no">PERSPEKTIVE / 01</span><h3>Mit Verantwortung wachsen.</h3><p className="lead">Wer zuverlässig arbeitet, kann perspektivisch mehr Verantwortung übernehmen – etwa in der Koordination eines Einsatzteams.</p><div className="career-orbit" aria-hidden="true"><i /><i /></div></Reveal></Parallax>
         </div>
       </section>
 
@@ -123,7 +131,7 @@ export default function Home() {
       </section>
 
       <section className="section final-section">
-        <Reveal className="container final-cta" amount={0.3}><div className="final-cta-grid" aria-hidden="true" /><span className="eyebrow">Nächster Schritt</span><h2 className="display">Bereit für klare Verhältnisse?</h2><p className="lead">Beschreiben Sie Ihr Projekt in wenigen Schritten. DG Team prüft Ihre Angaben und meldet sich persönlich bei Ihnen.</p><div className="hero-actions"><Button href="/angebot">Jetzt Angebot anfragen</Button><Button href="/kontakt" variant="secondary">Kontakt aufnehmen</Button></div><span className="final-index" aria-hidden="true">DG</span></Reveal>
+        <Reveal className="container final-cta" amount={0.3}><div className="final-cta-grid" aria-hidden="true" /><span className="eyebrow">Nächster Schritt</span><TextReveal className="display" text="Bereit für klare Verhältnisse?" delay={0.15} /><p className="lead">Beschreiben Sie Ihr Projekt in wenigen Schritten. DG Team prüft Ihre Angaben und meldet sich persönlich bei Ihnen.</p><div className="hero-actions"><Magnetic><Button href="/angebot">Jetzt Angebot anfragen</Button></Magnetic><Magnetic strength={0.2}><Button href="/kontakt" variant="secondary">Kontakt aufnehmen</Button></Magnetic></div><span className="final-index" aria-hidden="true">DG</span></Reveal>
       </section>
     </>
   );
