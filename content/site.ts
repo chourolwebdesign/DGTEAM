@@ -15,7 +15,8 @@ export const site = {
     { label: "Über uns", href: "/#ueber-uns" },
     { label: "Einsatzgebiete", href: "/einsatzgebiete" },
     { label: "Karriere", href: "/karriere" },
-    { label: "Kontakt", href: "/kontakt" }
+    { label: "Kontakt", href: "/kontakt" },
+    { label: "FAQ", href: "/faq" }
   ]
 } as const;
 

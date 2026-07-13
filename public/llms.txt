@@ -21,3 +21,4 @@ Hauptseiten:
 - https://www.dgteam.de/angebot
 - https://www.dgteam.de/kontakt
 - https://www.dgteam.de/einsatzgebiete
+- https://www.dgteam.de/faq

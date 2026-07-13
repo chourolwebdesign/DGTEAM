@@ -53,7 +53,7 @@ export function Header() {
           animate="show"
           variants={{hidden:{},show:{transition:{staggerChildren:.055,delayChildren:.16}}}}
         >
-          {[...site.nav.map((item,index)=>({...item,no:`0${index+1}`})),{href:"/angebot",label:"Angebot anfragen",no:"07"}].map((item)=>(
+          {[...site.nav,{href:"/angebot",label:"Angebot anfragen"}].map((item,index)=>({...item,no:`0${index+1}`})).map((item)=>(
             <motion.div key={item.href} variants={{hidden:{opacity:0,y:34,rotate:1.2},show:{opacity:1,y:0,rotate:0,transition:{duration:.55,ease:menuEase}}}}>
               <Link href={item.href} onClick={()=>setOpen(false)}><small>{item.no}</small>{item.label}</Link>
             </motion.div>

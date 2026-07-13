@@ -1,14 +1,17 @@
 "use client";
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { useId, useState } from "react";
+import { Plus } from "lucide-react";
 import type { FAQ } from "@/content/services";
 
 export function Accordion({ items }: { items: FAQ[] }) {
   const [open, setOpen] = useState<number | null>(0);
-  return <div className="faq-list">{items.map((item,index) => <div className="faq-item" key={item.question}>
-    <button className="faq-question" aria-expanded={open === index} aria-controls={`faq-${index}`} onClick={() => setOpen(open === index ? null : index)}>
-      <span>{item.question}</span>{open === index ? <Minus size={20}/> : <Plus size={20}/>} 
+  const baseId = useId();
+  return <div className="faq-list">{items.map((item,index) => <div className={`faq-item ${open === index ? "is-open" : ""}`} key={item.question}>
+    <button className="faq-question" aria-expanded={open === index} aria-controls={`${baseId}-${index}`} onClick={() => setOpen(open === index ? null : index)}>
+      <span>{item.question}</span><Plus size={20} aria-hidden="true" />
     </button>
-    {open === index && <div className="faq-answer" id={`faq-${index}`}>{item.answer}</div>}
+    <div className="faq-answer-wrap" id={`${baseId}-${index}`} aria-hidden={open !== index}>
+      <div className="faq-answer"><div className="faq-answer-inner">{item.answer}</div></div>
+    </div>
   </div>)}</div>;
 }

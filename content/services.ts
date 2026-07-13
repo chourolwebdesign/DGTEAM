@@ -1,9 +1,16 @@
 export type FAQ = { question: string; answer: string };
 export type Service = {
   slug: string; number: string; title: string; shortTitle: string; description: string;
-  scope: string[]; audiences: string[]; limitation?: string; faqs: FAQ[];
+  trust: string[]; scope: string[]; audiences: string[]; limitation?: string; faqs: FAQ[];
   metadata: { title: string; description: string };
 };
+
+export const serviceProcess: { no: string; title: string; text: string }[] = [
+  { no: "01", title: "Anfrage stellen", text: "Sie übermitteln uns die wichtigsten Informationen zu Ihrem Objekt – gern mit Fotos und Grundriss." },
+  { no: "02", title: "Planung & Abstimmung", text: "Wir prüfen den Umfang, klären offene Punkte und planen Termin, Team und Durchführung." },
+  { no: "03", title: "Umsetzung", text: "Die vereinbarten Arbeiten werden strukturiert, effizient und im abgestimmten Umfang ausgeführt." },
+  { no: "04", title: "Übergabe", text: "Die Immobilie wird im vereinbarten Zustand übergeben – auf Wunsch besenrein." },
+];
 
 const commonCost = "Die Kosten hängen unter anderem von Objektgröße, Zugänglichkeit, Menge, Materialien und dem vereinbarten Leistungsumfang ab. Nach Prüfung der Angaben erstellt DG Team ein individuelles Angebot.";
 
@@ -11,6 +18,7 @@ export const services: Service[] = [
   {
     slug: "entruempelung-haushaltsaufloesung", number: "01", title: "Entrümpelung & Haushaltsauflösung", shortTitle: "Entrümpelung",
     description: "Wir räumen Wohnungen, Häuser, Keller, Dachböden, Garagen und Gewerbeobjekte zuverlässig, diskret und termingerecht.",
+    trust: ["Privat & Gewerbe", "Diskrete Abwicklung", "Deutschlandweit im Einsatz"],
     scope: ["Wohnungen & Häuser", "Keller & Dachböden", "Garagen & Lager", "Nachlass- und Haushaltsauflösungen", "Gewerbeobjekte"],
     audiences: ["Umzug", "Immobilienverkauf", "Neuvermietung", "Nachlassfall", "Geschäftsauflösung", "Sanierungsvorbereitung"],
     faqs: [
@@ -22,6 +30,7 @@ export const services: Service[] = [
   {
     slug: "entkernung-rueckbau", number: "02", title: "Entkernung / Rückbau", shortTitle: "Entkernung",
     description: "Wir entfernen vereinbarte nicht tragende Bauteile und bereiten Immobilien für Sanierung, Modernisierung oder Umbau vor.",
+    trust: ["Ausschließlich nicht tragende Bauteile", "Klare Abstimmung", "Deutschlandweit im Einsatz"],
     scope: ["Bodenbeläge", "Deckenverkleidungen", "Trockenbauwände", "Türen & Zargen", "Sanitärgegenstände", "Einbauten & Küchen"],
     audiences: ["Wohnungen", "Häuser", "Büroflächen", "Gewerbeobjekte", "Industrieflächen", "Lagerhallen"],
     limitation: "DG Team führt keine Arbeiten an tragenden Bauteilen durch und nimmt keine Eingriffe in die Gebäudestatik vor. Der Leistungsumfang wird vor Projektbeginn individuell abgestimmt.",
@@ -34,6 +43,7 @@ export const services: Service[] = [
   {
     slug: "industrie-baustellenraeumung", number: "03", title: "Industrie- & Baustellenräumung", shortTitle: "Baustellenräumung",
     description: "Wir sortieren, verladen und transportieren vereinbarte Restmaterialien, Verpackungen und lose Rückstände von Industrie-, Lager- und Baustellenflächen ab.",
+    trust: ["Flexible Einsatzplanung", "Einzelne Abschnitte oder komplette Flächen", "Deutschlandweit im Einsatz"],
     scope: ["Rest- & Verpackungsmaterialien", "Industriehallen", "Lagerflächen", "Gewerbliche Bereiche", "Bauabschnitte", "Wiederkehrende Einsätze"],
     audiences: ["Umbau & Sanierung", "Großbaustellen", "Infrastrukturprojekte", "Industrieprojekte", "Lager- und Gewerbeflächen"],
     limitation: "Der konkrete Material- und Leistungsumfang wird vorab abgestimmt. Gefährliche oder gesondert zu behandelnde Stoffe müssen vor Beginn angegeben werden.",
@@ -46,6 +56,7 @@ export const services: Service[] = [
   {
     slug: "saubere-uebergabe", number: "04", title: "Saubere und besenreine Übergabe", shortTitle: "Saubere Übergabe",
     description: "Nach einer Entrümpelung oder Entkernung sorgen wir im vereinbarten Umfang für eine ordentliche und besenreine Übergabe.",
+    trust: ["Anschlussleistung nach Hauptleistung", "Vereinbarter Umfang", "Ordentliches Ergebnis"],
     scope: ["Grobes Zusammenkehren", "Einfache Schmutzbeseitigung", "Entfernung loser Rückstände", "Besenreine Übergabe nach Vereinbarung"],
     audiences: ["Eigentümer", "Vermieter", "Hausverwaltungen", "Immobilienunternehmen", "Investoren"],
     limitation: "Die saubere Übergabe ist ausschließlich als Anschlussleistung verfügbar und stellt keine eigenständige professionelle Gebäudereinigung dar.",
@@ -57,6 +68,7 @@ export const services: Service[] = [
   {
     slug: "optische-aufbereitung", number: "05", title: "Einfache optische Aufbereitung", shortTitle: "Optische Aufbereitung",
     description: "Auf Wunsch übernehmen wir nach unseren Hauptleistungen einfache Maßnahmen zur optischen Verbesserung der Räume.",
+    trust: ["Optionale Zusatzleistung", "Individuell vereinbart", "Einfache visuelle Verbesserung"],
     scope: ["Einfache visuelle Verbesserung", "Individuell abgestimmter Umfang", "Nur nach einer Hauptleistung", "Vorbereitung der weiteren Nutzung"],
     audiences: ["Eigentümer", "Vermieter", "Immobilienunternehmen", "Investoren"],
     limitation: "Die optische Aufbereitung ersetzt keine fachhandwerklichen Maler-, Renovierungs- oder Sanierungsarbeiten. Art und Umfang werden individuell vereinbart.",

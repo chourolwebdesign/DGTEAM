@@ -1,4 +1,5 @@
-import { ArrowRight, CheckCircle2, MapPin, Users, Building2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Users, Building2 } from "lucide-react";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { CinematicHero } from "@/components/home/CinematicHero";
 import { TrustRibbon } from "@/components/home/TrustRibbon";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { federalStates } from "@/content/site";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { GermanyMap } from "@/components/ui/GermanyMap";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { Magnetic } from "@/components/motion/Magnetic";
@@ -41,6 +43,7 @@ const homeFaq = [
 export default function Home() {
   return (
     <>
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: homeFaq.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }} />
       <CinematicHero />
       <TrustRibbon />
 
@@ -101,7 +104,7 @@ export default function Home() {
       <section className="section coverage coverage-motion">
         <div className="container split-grid">
           <Reveal direction="left"><span className="eyebrow coverage-eyebrow">Einsatzgebiete</span><h2 className="display">Von Krauchenwies aus deutschlandweit im Einsatz.</h2><p className="lead">Der Firmensitz von DG Team befindet sich in Krauchenwies, Baden-Württemberg. Flexible Einsatzteams arbeiten projektbezogen in ganz Deutschland.</p><Stagger className="state-cloud">{federalStates.map((state) => <StaggerItem key={state}><span>{state}</span></StaggerItem>)}</Stagger><div style={{ marginTop: "2rem" }}><Button href="/einsatzgebiete">Projekt in Ihrer Region anfragen</Button></div></Reveal>
-          <Reveal className="map-mark" direction="right"><span className="map-radar" aria-hidden="true" /><span className="map-dot"><MapPin size={16} /> Firmensitz Krauchenwies</span><span className="map-axis axis-x" /><span className="map-axis axis-y" /></Reveal>
+          <Reveal direction="right"><GermanyMap /></Reveal>
         </div>
       </section>
 
